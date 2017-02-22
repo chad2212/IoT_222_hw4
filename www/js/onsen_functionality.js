@@ -46,8 +46,11 @@ document.addEventListener('init', function(event) {
     else if(page.data.title == 'Unit Converter')
     {
     	document.getElementById('units').style.visibility="hidden"
-		document.getElementById('unitsConv').style.visibility="hidden"
-    	
+			document.getElementById('unitsConv').style.visibility="hidden"
+    	document.getElementById('radio-inch').addEventListener("change",convertMetrics);
+    	document.getElementById('radio-feet').addEventListener("change",convertMetrics);
+    	document.getElementById('radio-yard').addEventListener("change",convertMetrics);
+    	document.getElementById('radio-meter').addEventListener("change",convertMetrics);
     	document.getElementById('convert-num').addEventListener("change",convertMetrics);
     
     }
@@ -174,6 +177,7 @@ function calculateFat()
 			var healthyDictMale = {};
 			var healthyDictFemale = {};
 			document.getElementById('fats').style.visibility="visible";
+			document.getElementById('fatsConv').style.visibility="visible";
         }
         else
         {
@@ -193,7 +197,7 @@ function convertMetrics()
     console.log("Start of convert");
     var metricInput = document.getElementById("convert-num").value;
 
-    if(metricInput<=0)
+    if(metricInput<0)
     {
         alert("Invalid value detecetd");
     }
@@ -205,7 +209,7 @@ function convertMetrics()
         var meterConv = 0;
         if(document.getElementById('radio-inch').checked == true)
         {
-            inchConv = metricInput;
+            inchConv = metricInput*1;
             feetConv = metricInput/12;
             yardConv = metricInput*0.027777778
             meterConv = metricInput*0.0254
@@ -213,7 +217,7 @@ function convertMetrics()
         else if(document.getElementById('radio-feet').checked == true)
         {
             inchConv = metricInput*12;
-            feetConv = metricInput;
+            feetConv = metricInput*1;
             yardConv = metricInput*0.3333;
             meterConv = metricInput *0.3048;
         }
@@ -221,7 +225,7 @@ function convertMetrics()
         {
             inchConv =36*metricInput;
             feetConv = 3*metricInput;
-            yardConv = metricInput;
+            yardConv = metricInput*1;
             meterConv = 0.9144*metricInput;
         }
         else if(document.getElementById('radio-meter').checked == true)
@@ -229,14 +233,14 @@ function convertMetrics()
             inchConv = 39.3701*metricInput;
             feetConv = 3.28084*metricInput;
             yardConv = 1.09361*metricInput;
-            meterConv = metricInput;
+            meterConv = metricInput*1;
         }
         document.getElementById('units').style.visibility="visible"
         document.getElementById('unitsConv').style.visibility="visible"
-        document.getElementById("inchCell").innerHTML = inchConv;
-        document.getElementById("feetCell").innerHTML = feetConv;
-        document.getElementById("yardCell").innerHTML = yardConv;
-        document.getElementById("meterCell").innerHTML = meterConv;
+        document.getElementById("inchCell").innerHTML = inchConv.toFixed(2);
+        document.getElementById("feetCell").innerHTML = feetConv.toFixed(2);
+        document.getElementById("yardCell").innerHTML = yardConv.toFixed(2);
+        document.getElementById("meterCell").innerHTML = meterConv.toFixed(2);
         
     }
 }
@@ -268,7 +272,7 @@ function convertTemps()
          if(document.getElementById('radio-celsius-to').checked == true)
    		 {
             result = (5/9)*(tempInput-32);
-            document.getElementById('convertTempLabel').innerHTML = result.toFixed(2) + "Celsius";
+            document.getElementById('convertTempLabel').innerHTML = result.toFixed(2) + " Celsius";
    		 }
    		 if(document.getElementById('radio-fahrenheit-to').checked == true)
    		 {
