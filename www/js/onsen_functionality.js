@@ -33,8 +33,10 @@ document.addEventListener('init', function(event) {
     }
     else if(page.data.title == 'Fat % Calculator')
     {
-    	document.getElementById('fats').style.visibility="hidden"
-    	document.getElementById('fatsConv').style.visibility="hidden";
+    	document.getElementById('fats-1').style.visibility="hidden";
+    	document.getElementById('fatsConv-1').style.visibility="hidden";
+      document.getElementById('fats-2').style.visibility="hidden";
+      document.getElementById('fatsConv-2').style.visibility="hidden";
     	document.getElementById('radio-male').addEventListener("change",calculateFat);
     	document.getElementById('radio-female').addEventListener("change",calculateFat);
     	document.getElementById('weight').addEventListener("change",calculateFat);
@@ -45,8 +47,10 @@ document.addEventListener('init', function(event) {
     }
     else if(page.data.title == 'Unit Converter')
     {
-    	document.getElementById('units').style.visibility="hidden"
-			document.getElementById('unitsConv').style.visibility="hidden"
+    	document.getElementById('units-1').style.visibility="hidden";
+			document.getElementById('unitsConv-1').style.visibility="hidden";
+      document.getElementById('units-2').style.visibility="hidden";
+      document.getElementById('unitsConv-2').style.visibility="hidden";
     	document.getElementById('radio-inch').addEventListener("change",convertMetrics);
     	document.getElementById('radio-feet').addEventListener("change",convertMetrics);
     	document.getElementById('radio-yard').addEventListener("change",convertMetrics);
@@ -176,13 +180,17 @@ function calculateFat()
 			//Data structure
 			var healthyDictMale = {};
 			var healthyDictFemale = {};
-			document.getElementById('fats').style.visibility="visible";
-			document.getElementById('fatsConv').style.visibility="visible";
+			document.getElementById('fats-1').style.visibility="visible";
+			document.getElementById('fatsConv-1').style.visibility="visible";
+      document.getElementById('fats-2').style.visibility="visible";
+      document.getElementById('fatsConv-2').style.visibility="visible";
         }
         else
         {
-      	    document.getElementById('fats').style.visibility="hidden";
-      	    document.getElementById('fatsConv').style.visibility="hidden";
+      	    document.getElementById('fats-1').style.visibility="hidden";
+      	    document.getElementById('fatsConv-1').style.visibility="hidden";
+            document.getElementById('fats-2').style.visibility="hidden";
+            document.getElementById('fatsConv-2').style.visibility="hidden";
         
         }
         
@@ -235,8 +243,10 @@ function convertMetrics()
             yardConv = 1.09361*metricInput;
             meterConv = metricInput*1;
         }
-        document.getElementById('units').style.visibility="visible"
-        document.getElementById('unitsConv').style.visibility="visible"
+        document.getElementById('units-1').style.visibility="visible";
+        document.getElementById('unitsConv-1').style.visibility="visible";
+        document.getElementById('units-2').style.visibility="visible";
+        document.getElementById('unitsConv-2').style.visibility="visible";
         document.getElementById("inchCell").innerHTML = inchConv.toFixed(2);
         document.getElementById("feetCell").innerHTML = feetConv.toFixed(2);
         document.getElementById("yardCell").innerHTML = yardConv.toFixed(2);

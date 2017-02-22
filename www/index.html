@@ -112,17 +112,21 @@
                     </label>
                   </ons-list-item>
                 </ons-list>
-                
-                <ons-row id = "units">
+                <br><br><br>
+                <ons-row id = "units-1" class="col-heading horizontal-center">
                     <ons-col>Inches</ons-col>
                     <ons-col>Feet</ons-col>
-                    <ons-col>Yards</ons-col>
-                    <ons-col>Meters?</ons-col>
-                </tr>
                 </ons-row>
-                <ons-row id = "unitsConv"> 
+                <ons-row id = "unitsConv-1" class="horizontal-center"> 
                     <ons-col id = "inchCell"></ons-col>
                     <ons-col id = "feetCell"> </ons-col>
+                </ons-row>
+                <br><br>
+                <ons-row id = "units-2" class="col-heading horizontal-center">
+                    <ons-col>Yards</ons-col>
+                    <ons-col>Meters</ons-col>
+                </ons-row>
+                <ons-row id = "unitsConv-2" class="horizontal-center"> 
                     <ons-col id = "yardCell"></ons-col>
                     <ons-col id = "meterCell"></ons-col>
                 </ons-row>
@@ -202,45 +206,35 @@
             </ons-list>
             <br>
           
-            <!-- <label for="value"> Weight </label> <br>
-            <input type="text" id="weight"><br>
-            <label for="value"> Height </label> <br>
-            <input type="text" id="height"><br>
-            <label for="value"> Hip Circumference </label> <br>
-            <input type="text" id="hip"><br>
-            <label for="value"> Neck Circumference </label> <br>
-            <input type="text" id="neck"><br>
-            <label for="value"> Waist Circumference </label> <br>
-            <input type="text" id="waist"><br> -->
-
-            
               <p>
-                <ons-input input-id="weight" modifier="underbar" placeholder="Weight" type="number" float></ons-input>
+                <ons-input input-id="weight" modifier="underbar" placeholder="Weight" type="number" float class="left small-input-form"></ons-input>
+                <ons-input input-id="height" modifier="underbar" placeholder="Height" type="number" float class="right small-input-form"></ons-input>
               </p>
+              <br><br>
               <p>
-                <ons-input input-id="height" modifier="underbar" placeholder="Height" type="number" float></ons-input>
+                <ons-input input-id="hip-circum" modifier="underbar" placeholder="Hip Circumference" type="number" float class="left small-input-form"></ons-input>
+                <ons-input input-id="neck-circum" modifier="underbar" placeholder="Neck Circumference" type="number" float class="right small-input-form"></ons-input>
               </p>
-              <p>
-                <ons-input input-id="hip-circum" modifier="underbar" placeholder="Hip Circumference" type="number" float></ons-input>
-              </p>
-              <p>
-                <ons-input input-id="neck-circum" modifier="underbar" placeholder="Neck Circumference" type="number" float></ons-input>
-              </p>
+              <br><br>
               <p>
                 <ons-input input-id="waist-circum" modifier="underbar" placeholder="Waist Circumference" type="number" float></ons-input>
               </p>
             </div>
         
-                <ons-row id = "fats">
+                <ons-row id = "fats-1" class="col-heading horizontal-center">
                     <ons-col>Body Fat Percentage</ons-col>
                     <ons-col>Fat Mass</ons-col>
-                    <ons-col>Lean Mass</ons-col>
-                    <ons-col>Healthy?</ons-col>
-                </tr>
                 </ons-row>
-                <ons-row id = "fatsConv"> 
+                <ons-row id = "fatsConv-1" class="horizontal-center"> 
                     <ons-col id = "bodyFatPercCell"></ons-col>
                     <ons-col id = "fatMassCell"> </ons-col>
+                </ons-row>
+                <br><br>
+                <ons-row id = "fats-2" class="col-heading horizontal-center">
+                    <ons-col>Lean Mass</ons-col>
+                    <ons-col>Healthy?</ons-col>
+                </ons-row>
+                <ons-row id = "fatsConv-2" class="horizontal-center"> 
                     <ons-col id = "leanMassCell"></ons-col>
                     <ons-col id = "healthyCell"></ons-col>
                 </ons-row>

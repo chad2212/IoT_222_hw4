@@ -27,6 +27,21 @@
     float: right;
 }
 
+.small-input-form{
+    width: 8em;
+}
+
+.col-heading{
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+ons-row{
+    width: 75%;
+    text-align: center;
+}
+
+
 button{
     position:relative;
     border-color: black;
