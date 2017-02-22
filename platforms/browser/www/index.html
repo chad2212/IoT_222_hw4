@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> -->
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css"/>
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="lib/onsen/js/onsenui.js"></script>
+<!-- Uncommenting the lines below can enable / disable the Android Style -->
+    <!--     
+        <script>
+            ons.platform.select("android");
+        </script>
+    <-->
+
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    
+    <title>Unit Calculator</title>
+    <script type="text/javascript" src="js/index.js" async></script>
+    <script type="text/javascript" src="js/onsen_functionality.js" async></script>
+</head>
+<body>
+    <ons-navigator id="myNavigator" page="all-calculator.html"></ons-navigator>
+
+    <!-- Start of homepage with all calculator -->
+    <ons-template id="all-calculator.html">
+      <ons-page id="all-calculator">
+        <ons-toolbar>
+          <div class="center"></div>
+        </ons-toolbar>
+
+        <div class="horizontal-center vertical-center">
+          <!-- Unit Converter Button -->
+          <div>
+            <ons-button modifier="large" id="push-button-unit-converter">
+                <ons-icon icon="pencil" class="left"></ons-icon>     Unit Conversion
+            </ons-button>
+          </div>
+            <br>
+            <!-- Date Calculator Button -->
+          <div>
+            <ons-button modifier="large" id="push-button-date-calculator">
+                <ons-icon icon="calendar" class="left"></ons-icon>     Date Calculation
+            </ons-button>
+          </div>
+            <br>
+            <!-- BMI Calculator Button -->
+          <div>
+              <ons-button modifier="large" id="push-button-bmi">
+                <ons-icon icon="user" class="left"></ons-icon>     BMI
+              </ons-button>
+          </div>
+            <br>
+            <!-- Temperature Converter Button -->
+          <div>
+              <ons-button modifier="large" id="push-button-temperature-converter">
+                <ons-icon icon="ion-thermometer" class="left"></ons-icon>    Temperature
+              </ons-button>
+          </div>
+        </div>
+      </ons-page>
+    </ons-template>
+    <!-- end of homepage with all calculators -->
+
+    <!-- start of unit converter page -->
+    <ons-template id="unit-converter.html">
+      <ons-page id="unit-converter">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center"></div>
+        </ons-toolbar>
+
+            <!-- <div id="unit-conversion" class="horizontal-center vertical-top">  -->
+            <!-- <p> This converter will convert the input into 4 different types of length </p> -->
+                
+                <p class="horizontal-center">
+                  <ons-input input-id="convert-num" modifier="underbar" placeholder="Example: 15" type="number" float></ons-input>
+                </p>
+                <ons-list>
+                  <ons-list-header>Unit Metric for num above</ons-list-header>
+                  <ons-list-item tappable>
+                    <label class="left">
+                      <ons-input name="unit-metric" type="radio" input-id="radio-inch" checked></ons-input>
+                    </label>
+                    <label for="radio-inch" class="center">
+                      Inches
+                    </label>
+                  </ons-list-item>
+                  <ons-list-item tappable>
+                    <label class="left">
+                      <ons-input name="unit-metric" type="radio" input-id="radio-feet"></ons-input>
+                    </label>
+                    <label for="radio-feet" class="center">
+                      Feet
+                    </label>
+                  </ons-list-item>
+                  <ons-list-item tappable>
+                    <label class="left">
+                      <ons-input name="unit-metric" type="radio" input-id="radio-yard"></ons-input>
+                    </label>
+                    <label for="radio-yard" class="center">
+                      Yards
+                    </label>
+                  </ons-list-item>
+                  <ons-list-item tappable>
+                    <label class="left">
+                      <ons-input name="unit-metric" type="radio" input-id="radio-meter"></ons-input>
+                    </label>
+                    <label for="radio-meter" class="center">
+                      Meters
+                    </label>
+                  </ons-list-item>
+                </ons-list>
+                
+                
+                
+                
+                
+            <!-- <table>
+                <tr>
+                    <th>Inches</th>
+                    <th>Feet</th>
+                    <th>Yards</th>
+                    <th>Meters</th>
+                </tr>
+                <tr>
+                    <td id = "inchCell"></td>
+                    <td id = "feetCell"> </td>
+                    <td id = "yardCell"></td>
+                    <td id = "meterCell"></td>
+                </tr>
+            </table> -->
+        <!-- </div> -->
+      </ons-page>
+    </ons-template>
+    <!-- end of unit converter page -->
+    
+  
+    <!-- start of date calculator page -->
+    <ons-template id="date-calculator.html">
+      <ons-page id="date-calculator">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center"></div>
+        </ons-toolbar>
+
+          <div class="horizontal-center vertical-center"> 
+            
+            <!-- <p> This will calculate the number of days between 2 dates </p> -->
+
+            <label class="right">
+                 <input type = "date" id = "startDate" class="large-input">
+            </label>
+            <label for="startDate" class="left">
+                Start Date
+            </label>
+            <br><br><br>
+            <label class="right">
+                 <input type = "date" id = "endDate" class="large-input">
+            </label>
+            <label for="endDate" class="left">
+                End Date
+            </label>
+          </div>
+          <div class="horizontal-center vertical-bottom">
+            <h4 class="center-text"><span id="differenceDays">0</span> Days</h4>
+          </div>
+          
+      </ons-page>
+    </ons-template>
+    <!-- end of date calculator page -->
+    
+    <!-- start of bmi calculator page -->
+    <ons-template id="bmi-calculator.html">
+      <ons-page id="bmi-calculator">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center"></div>
+        </ons-toolbar>
+
+          <div class="horizontal-center vertical-top">
+          
+            <!-- <p> This converter will take a variety of inputs and output the corresponding fat mass percentage </p> -->
+            <ons-list>
+                  <ons-list-header>Gender</ons-list-header>
+                  <ons-list-item tappable>
+                    <label class="left">
+                      <ons-input name="color" type="radio" input-id="radio-male" checked></ons-input>
+                    </label>
+                    <label for="radio-male" class="center">
+                      Male
+                    </label>
+                  </ons-list-item>
+                  <ons-list-item tappable>
+                    <label class="left">
+                      <ons-input name="color" type="radio" input-id="radio-female"></ons-input>
+                    </label>
+                    <label for="radio-female" class="center">
+                      Female
+                    </label>
+                  </ons-list-item>
+            </ons-list>
+            <br>
+          
+            <!-- <label for="value"> Weight </label> <br>
+            <input type="text" id="weight"><br>
+            <label for="value"> Height </label> <br>
+            <input type="text" id="height"><br>
+            <label for="value"> Hip Circumference </label> <br>
+            <input type="text" id="hip"><br>
+            <label for="value"> Neck Circumference </label> <br>
+            <input type="text" id="neck"><br>
+            <label for="value"> Waist Circumference </label> <br>
+            <input type="text" id="waist"><br> -->
+
+            
+              <p>
+                <ons-input input-id="wegith" modifier="underbar" placeholder="Weight" type="number" float></ons-input>
+              </p>
+              <p>
+                <ons-input input-id="height" modifier="underbar" placeholder="Height" type="number" float></ons-input>
+              </p>
+              <p>
+                <ons-input input-id="hip-circum" modifier="underbar" placeholder="Hip Circumference" type="number" float></ons-input>
+              </p>
+              <p>
+                <ons-input input-id="neck-circum" modifier="underbar" placeholder="Neck Circumference" type="number" float></ons-input>
+              </p>
+              <p>
+                <ons-input input-id="waist-circum" modifier="underbar" placeholder="Waist Circumference" type="number" float></ons-input>
+              </p>
+            </div>
+           <table id = "fats">
+                <tr>
+                    <th>Body Fat Percentage</th>
+                    <th>Fat Mass</th>
+                    <th>Lean Mass</th>
+                    <th>Healthy?</th>
+                </tr>
+                <tr>
+                    
+                    <td id = "bodyFatPercCell"></td>
+                    <td id = "fatMassCell"> </td>
+                    <td id = "leanMassCell"></td>
+                    <td id = "healthyCell"></td>
+                </tr>
+            </table>
+      </ons-page>
+    </ons-template>
+    <!-- end of bmi calculator page -->
+
+    <!-- start of temperature converter page -->
+    <ons-template id="temperature-converter.html">
+      <ons-page id="temperature-converter">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Back</ons-back-button></div>
+          <div class="center"></div>
+        </ons-toolbar>
+
+          <p class="horizontal-center">
+            <ons-input input-id="temperature-num" modifier="underbar" placeholder="Exaple: 15" type="number" float></ons-input>
+          </p>
+
+          <!-- First radio button forms for temperature from -->
+          <ons-list>
+            <ons-list-header>Temperature From</ons-list-header>
+            <ons-list-item tappable>
+              <label class="left">
+                <ons-input name="temperature-from" type="radio" input-id="radio-celsius-from" checked></ons-input>
+              </label>
+              <label for="radio-celsius-from" class="center">
+                Celsius
+              </label>
+            </ons-list-item>
+            <ons-list-item tappable>
+              <label class="left">
+                <ons-input name="temperature-from" type="radio" input-id="radio-fahrenheit-from"></ons-input>
+              </label>
+              <label for="radio-fahrenheit-from" class="center">
+                Fahrenheit
+              </label>
+            </ons-list-item>
+            <ons-list-item tappable>
+              <label class="left">
+                <ons-input name="temperature-from" type="radio" input-id="radio-kelvin-from"></ons-input>
+              </label>
+              <label for="radio-kelvin-from" class="center">
+                Kelvin
+              </label>
+            </ons-list-item>
+          </ons-list>
+
+          <!-- Second radio button forms for temperature to  -->
+          <ons-list>
+            <ons-list-header>Temperature To</ons-list-header>
+            <ons-list-item tappable>
+              <label class="left">
+                <ons-input name="temperature-to" type="radio" input-id="radio-celsius-to" checked></ons-input>
+              </label>
+              <label for="radio-celsius-to" class="center">
+                Celsius
+              </label>
+            </ons-list-item>
+            <ons-list-item tappable>
+              <label class="left">
+                <ons-input name="temperature-to" type="radio" input-id="radio-fahrenheit-to"></ons-input>
+              </label>
+              <label for="radio-fahrenheit-to" class="center">
+                Fahrenheit
+              </label>
+            </ons-list-item>
+            <ons-list-item tappable>
+              <label class="left">
+                <ons-input name="temperature-to" type="radio" input-id="radio-kelvin-to"></ons-input>
+              </label>
+              <label for="radio-kelvin-to" class="center">
+                Kelvin
+              </label>
+            </ons-list-item>
+          </ons-list>
+
+      </ons-page>
+    </ons-template>
+    <!-- end of temperature converter page -->
+
+    
+</body>
+</html>
